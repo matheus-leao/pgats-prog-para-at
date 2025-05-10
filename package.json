@@ -1,0 +1,24 @@
+{
+  "name": "pgats-prog-para-at",
+  "version": "1.0.0",
+  "description": "Trabalho final da disciplina de Programação para Automação de Testes no curso de Pós graduação em Automação de Testes de Software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheus-leao/pgats-prog-para-at.git"
+  },
+  "keywords": [],
+  "author": "Matheus Leao",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/matheus-leao/pgats-prog-para-at/issues"
+  },
+  "homepage": "https://github.com/matheus-leao/pgats-prog-para-at#readme",
+  "dependencies": {
+    "mocha": "^11.2.2"
+  }
+}
