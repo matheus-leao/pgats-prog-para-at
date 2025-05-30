@@ -23,10 +23,9 @@ describe('Testes da disciplina - fundamentos JS', () => {
   });
 
   it('QUANDO a idade = 1 + porte M, DEVE ser permitida a adoção', () => {
-    assert.strictEqual(verificarSePodeSerAdotado(1, 'M'), false)
-    assert.strictEqual(verificarSePodeSerAdotado(2, 'M'), true)
-    assert.strictEqual(verificarSePodeSerAdotado(2, 'P'), true)
+    assert.strictEqual(verificarSePodeSerAdotado(1, 'M'), true)
     assert.strictEqual(verificarSePodeSerAdotado(1, 'P'), true)
+    assert.strictEqual(verificarSePodeSerAdotado(0.5, 'P'), true)
   })
 
   it('QUANDO o peso = 14.5, DEVE ser retornado 4350 gramas para o consumo diário', () => {
