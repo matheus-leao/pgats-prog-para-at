@@ -4,6 +4,7 @@
 name: Run all tests on every update
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -17,7 +18,6 @@ jobs:
     strategy:
       matrix:
         node-version: [22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
@@ -28,4 +28,17 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm install mocha
-    - run: npx mocha
+    - run: npx mocha --reporter json --reporter-option output=test-results.json
+
+    - uses: actions/upload-artifact@v4  # upload test results
+      if: ${{ !cancelled() }} 
+      with:
+        name: test-results
+        path: test-results.json
+
+    - uses: dorny/test-reporter@v2
+      with:
+        artifact: test-results            
+        name: Mocha Tests                 
+        path: 'test-results.json'    
+        reporter: mocha-json             
