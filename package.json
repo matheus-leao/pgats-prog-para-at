@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/matheus-leao/pgats-prog-para-at#readme",
   "dependencies": {
-    "mocha": "^11.2.2"
+    "mocha": "^11.6.0"
   }
 }
